@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #36d1dc;
+  color: white;
+  margin-bottom: 10px;
+}
+
+span {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px;
+  margin: 5px 5px;
+  background-color: rgb(37, 64, 198);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 80px;
+}
+
+button:hover {
+  background-color: rgb(23, 105, 182);
+}

@@ -1,0 +1,15 @@
+.tabs {
+  display: flex;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #f1f1f1;
+}
+
+button.active {
+  background-color: #ccc;
+}

@@ -1,0 +1,71 @@
+.existing-games-container {
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .game-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.game-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #97b9f4a7;
+  border-radius: 8px;
+}
+
+.game-card:hover {
+  background-color: #14e2ed;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+select,
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #5b86e5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+button:hover,
+select:hover {
+  background-color: #36d1dc;
+}

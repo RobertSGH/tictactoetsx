@@ -1,0 +1,44 @@
+.game-board {
+  text-align: center;
+  margin: 20px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.participants {
+  margin-bottom: 20px;
+}
+
+.board {
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  text-align: center;
+  vertical-align: top;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+}
