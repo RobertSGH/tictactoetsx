@@ -54,9 +54,10 @@ const Rankings: React.FC = () => {
     setOffset(offset - limit);
   };
 
+  console.log(state);
+
   return (
     <div className='rankings-container'>
-      <h1>Player Rankings</h1>
       <table>
         <thead>
           <tr>
@@ -70,7 +71,7 @@ const Rankings: React.FC = () => {
             <tr key={index}>
               <td>{player.username}</td>
               <td>{player.game_count}</td>
-              <td>{player.win_rate}%</td>
+              <td>{parseFloat(player.win_rate).toFixed(2)}%</td>
             </tr>
           ))}
         </tbody>
@@ -78,7 +79,12 @@ const Rankings: React.FC = () => {
       <button disabled={offset === 0} onClick={handlePreviousPage}>
         Previous
       </button>
-      <button onClick={handleNextPage}>Next</button>
+      <button
+        disabled={state.rankings?.length < limit}
+        onClick={handleNextPage}
+      >
+        Next
+      </button>
     </div>
   );
 };

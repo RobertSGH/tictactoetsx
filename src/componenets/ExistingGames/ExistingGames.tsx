@@ -99,6 +99,7 @@ const ExistingGames: React.FC = () => {
           },
         }
       );
+
       const data = await response.json();
       dispatch({ type: 'SET_CURRENT_GAME', payload: data });
       dispatch({ type: 'SET_ERROR', payload: null });
@@ -139,18 +140,20 @@ const ExistingGames: React.FC = () => {
     <div className='existing-games-container'>
       {!selectedGame ? (
         <>
-          <button onClick={handleCreateNewGame}>Create New Game</button>
-          <div>
-            Filter by status:
-            <select
-              onChange={handleFilterChange}
-              value={state.filterStatus || ''}
-            >
-              <option value=''>All</option>
-              <option value='open'>Open</option>
-              <option value='progress'>In Progress</option>
-              <option value='finished'>Completed</option>
-            </select>
+          <div className='new-game'>
+            <button onClick={handleCreateNewGame}>Create New Game</button>
+            <div>
+              <label htmlFor='statusFilter'>Filter by status:</label>
+              <select
+                onChange={handleFilterChange}
+                value={state.filterStatus || ''}
+              >
+                <option value=''>All</option>
+                <option value='open'>Open</option>
+                <option value='progress'>In Progress</option>
+                <option value='finished'>Completed</option>
+              </select>
+            </div>
           </div>
           <div className='game-grid'>
             {filteredGames?.map((game) => (
@@ -173,15 +176,17 @@ const ExistingGames: React.FC = () => {
               </div>
             ))}
           </div>
-          <button
-            disabled={!state.pagination.previous}
-            onClick={handlePreviousPage}
-          >
-            Previous
-          </button>
-          <button disabled={!state.pagination.next} onClick={handleNextPage}>
-            Next
-          </button>
+          <div>
+            <button
+              disabled={!state.pagination.previous}
+              onClick={handlePreviousPage}
+            >
+              Previous
+            </button>
+            <button disabled={!state.pagination.next} onClick={handleNextPage}>
+              Next
+            </button>
+          </div>
         </>
       ) : (
         <>

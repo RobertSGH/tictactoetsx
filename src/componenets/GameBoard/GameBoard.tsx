@@ -112,7 +112,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ gameId, fetchGameDetails }) => {
         if (state.currentGame && state.currentGame.id) {
           fetchGameDetails(state.currentGame.id);
         }
-      }, 7000);
+      }, 5000);
       return () => {
         clearInterval(intervalId);
       };

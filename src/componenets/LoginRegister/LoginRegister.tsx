@@ -26,7 +26,6 @@ const LoginRegister: React.FC = () => {
         },
         body: JSON.stringify({ username, password }),
       });
-
       if (response.ok) {
         if (isLogin) {
           const data = await response.json();
@@ -39,6 +38,7 @@ const LoginRegister: React.FC = () => {
         }
       } else {
         const data = await response.json();
+        console.log(data);
         dispatch({
           type: 'SET_ERROR',
           payload: data.errors[0]?.message || 'An unknown error occurred',
